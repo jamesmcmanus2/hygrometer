@@ -1,12 +1,25 @@
-void setup() {
-  // put your setup code here, to run once:
+#include <math.h>
 
-overview = DHT.read11(11);
-temp = DHT.temperature,1;
-hum = DHT.humidity,1;
+const int B = 4275;
+const int R0 = 100000;        
+const int pinTempSensor = A0;    
+
+void setup()
+{
+    Serial.begin(9600);
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
-//test commit
+void loop()
+{
+    int a = analogRead(pinTempSensor);
+
+    float R = 1023.0/a-1.0;
+    R = R0*R;
+
+    float temperature = 1.0/(log(R/R0)/B+1/298.15)-273.15; // convert to temperature via datasheet
+
+    Serial.print("temperature = ");
+    Serial.println(temperature);
+
+    delay(100);
 }
