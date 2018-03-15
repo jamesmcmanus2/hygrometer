@@ -8,5 +8,5 @@ hum = DHT.humidity,1;
 
 void loop() {
   // put your main code here, to run repeatedly:
-
+//test commit
 }
