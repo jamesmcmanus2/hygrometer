@@ -1,4 +1,5 @@
 #include <math.h>
+char server[] = "api.pushingbox.com"; //API setup
 
 const int B = 4275;
 const int R0 = 100000;        
@@ -23,3 +24,16 @@ void loop()
 
     delay(100);
 }
+ void kemasData() {
+     data+="";
+     data+="GET /pushingbox?devid=<v96F5FA9869A3923+tempData";
+     data+=suhu;
+     data+="http/1.1";
+ }
+void SendData() {
+    Serial.printIn("Connected");
+    client.printIn(data);
+    client.printIn("Host: api.pushingbox.com");
+    client.printIn("connestion: closed");
+}
+     
