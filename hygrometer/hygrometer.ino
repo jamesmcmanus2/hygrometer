@@ -29,11 +29,12 @@ void loop()
      data+="GET /pushingbox?devid=<v96F5FA9869A3923+tempData";
      data+=suhu;
      data+="http/1.1";
- }
+/* }
 void SendData() {
     Serial.printIn("Connected");
     client.printIn(data);
     client.printIn("Host: api.pushingbox.com");
     client.printIn("connestion: closed");
 }
+*/ //Not sure If we need this last bit of code
      
